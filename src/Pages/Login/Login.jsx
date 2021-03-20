@@ -10,6 +10,7 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithG
 const Login = () => {
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [errMsg, setErrMsg] = useState('');
 
     const location = useLocation();
     const history = useHistory();
@@ -26,7 +27,7 @@ const Login = () => {
             .then(user => {
                 user.updateProfile({
                     displayName: name
-                })
+                }).then(user => console.log(user))
                 return user;
             })
             .then(user => {
@@ -39,6 +40,7 @@ const Login = () => {
                 setLoggedInUser(user);
                 history.replace(from);
             })
+            .catch(err => setErrMsg(err.message))
         }
     };
 
@@ -87,6 +89,9 @@ const Login = () => {
                         )
                     }
                     <input type="submit" value={signUp ? 'Sign Up' : 'Login'} />
+                    {
+                        errMsg && <span className="error">{errMsg}</span>
+                    }
                 </form>
                 <p>Already have an Account? <button onClick={() => setSignUp(!signUp)} className="login">{signUp ? 'Login' : 'Sign Up'}</button></p>
             </div>

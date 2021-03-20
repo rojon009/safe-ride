@@ -13,6 +13,7 @@
 .navigation{
     display: flex;
     gap: 2rem;
+    z-index: 100000;
 }
 
 .navigation a{
