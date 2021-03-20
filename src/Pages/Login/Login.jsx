@@ -15,7 +15,8 @@ const Login = () => {
     const history = useHistory();
     let {from} = location.state || {from: {state: '/'}}
     
-    const [signUp, setSignUp] = useState(true);
+    const [signUp, setSignUp] = useState(false);
+
     const { register, handleSubmit, watch, errors } = useForm();
 
     const onSubmit = ({name, email, password}) => {
@@ -55,7 +56,7 @@ const Login = () => {
     return (
         <div className="login-page">
             <div className="form-area">
-                <h1>Create an Account</h1>
+                <h1>{signUp ? 'Create an Account' : 'Log In'}</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     {
                         signUp && (

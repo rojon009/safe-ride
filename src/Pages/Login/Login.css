@@ -10,7 +10,7 @@
 }
 .login-page .form-area button.login{
     font-size: 1.5rem;
-    color: rgb(236, 144, 144);
+    color: #ec9090;
     border: none;
     background: transparent;
     cursor: pointer;
@@ -84,3 +84,10 @@ form span.error{
     width: 30px;
 }
 
+
+
+@media screen and (max-width: 760px) {
+    .login-page .form-area{
+        width: 90%;
+    }
+}

@@ -23,7 +23,7 @@ const Header = () => {
                 <Link to="/destination">Destination</Link>
                 <Link to="/contact">Contact</Link>
                 <Link to="/blog">Blog</Link>
-                <button onClick={() => auth.signOut()}>Log Out</button>
+                <button className="sign-out" onClick={() => auth.signOut()}>LogOut</button>
                 {
                     loggedInUser ?
                     <button className="user">{loggedInUser?.displayName}</button>
@@ -32,7 +32,7 @@ const Header = () => {
                 }
             </nav>
             <button className="menu">
-                <button className="user">{loggedInUser?.displayName}</button>
+                <span className="user">{loggedInUser?.displayName}</span>
                 <svg width='40px' height="40px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
