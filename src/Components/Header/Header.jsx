@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { UserContext } from '../../App';
+import { auth } from '../../firebase/firebase';
 import logo from '../../Images/logo.png';
 import './Header.css'
 const Header = () => {
@@ -22,6 +23,7 @@ const Header = () => {
                 <Link to="/destination">Destination</Link>
                 <Link to="/contact">Contact</Link>
                 <Link to="/blog">Blog</Link>
+                <button onClick={() => auth.signOut()}>Log Out</button>
                 {
                     loggedInUser ?
                     <button className="user">{loggedInUser?.displayName}</button>

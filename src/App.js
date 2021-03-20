@@ -11,6 +11,7 @@ import Login from './Pages/Login/Login';
 import { createContext, useEffect, useState } from 'react';
 import Destination from './Pages/Destination/Destination';
 import { auth } from './firebase/firebase';
+import PrivetRoute from './Components/PrivetRoute/PrivetRoute';
 
 
 export const UserContext = createContext();
@@ -40,9 +41,9 @@ function App() {
           <Route exact path="/destination">
             <Redirect to='/destination/bike'/>
           </Route>
-          <Route path="/destination/:id">
+          <PrivetRoute path="/destination/:id">
             <Destination />
-          </Route>
+          </PrivetRoute>
         </Switch>
       </Router>
     </UserContext.Provider>

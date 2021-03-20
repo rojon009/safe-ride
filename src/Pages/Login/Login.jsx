@@ -28,16 +28,26 @@ const Login = () => {
                 })
                 return user;
             })
-            .then(user => setLoggedInUser(user))
+            .then(user => {
+                setLoggedInUser(user);
+                history.replace(from);
+            })
         } else {
             signInWithEmailAndPassword(email,password)
-            .then(res => console.log(res.user))
+            .then(user => {
+                setLoggedInUser(user);
+                history.replace(from);
+            })
         }
     };
 
     const loginInWithGoogle = () => {
         signInWithGoogle()
-        .then(res => console.log(res))
+        .then(res => res.user)
+        .then(user => {
+            setLoggedInUser(user);
+            history.replace(from);
+        })
     }
 
 
