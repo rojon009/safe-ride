@@ -13,7 +13,7 @@ const Login = () => {
 
     const location = useLocation();
     const history = useHistory();
-    let {from} = location.state || {from: {state: '/'}}
+    let {from} = location.state || {from: {pathname: '/'}}
     
     const [signUp, setSignUp] = useState(false);
 
