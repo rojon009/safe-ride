@@ -12,6 +12,7 @@ import { createContext, useEffect, useState } from 'react';
 import Destination from './Pages/Destination/Destination';
 import { auth } from './firebase/firebase';
 import PrivetRoute from './Components/PrivetRoute/PrivetRoute';
+import Page404 from './Components/Page404/Page404';
 
 
 export const UserContext = createContext();
@@ -44,6 +45,9 @@ function App() {
           <PrivetRoute path="/destination/:id">
             <Destination />
           </PrivetRoute>
+          <Route to="*">
+            <Page404 />
+          </Route>
         </Switch>
       </Router>
     </UserContext.Provider>

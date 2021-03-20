@@ -48,12 +48,37 @@
     background: #e9bcac;
 }
 
+.sign-out{
+    cursor: pointer;
+    background: transparent;
+    color: #e97c7c;
+    font-weight: 900;
+}
+
 @media screen and (max-width: 760px) {
     .header{
         padding: 0 2%;
         padding-top: 0.6rem;
+        position: relative;
     }
     .navigation{
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background: white;
+        top: 85px;
+        right: 15px;
+        border-radius: 0.5rem;
+        box-shadow: 5px 5px 5px rgba(0,0,0,0.4);
+        gap: 0.5rem;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+    }
+    .show{
+        display: flex;
+    }
+    .navigation .user{
         display: none;
     }
     .menu {
@@ -64,5 +89,8 @@
     }
     .menu .user{
         pointer-events: none;
+    }
+    .sign-out{
+        padding-bottom: 2rem;
     }
 }
