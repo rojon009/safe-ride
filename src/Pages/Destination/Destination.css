@@ -1,0 +1,19 @@
+.destination{
+    padding-top: 3rem;
+    width:90vw;
+    margin: 0 auto;
+    height: 800px;
+    display: flex;
+}
+
+.destination .sidebar {
+    height: 400px;
+    flex: 1 1 400px;
+    padding: 2rem 1rem;
+}
+
+.destination .map-area {
+    width: 100%;
+    background: #3326e7;
+    padding: 2rem 1rem;
+}
