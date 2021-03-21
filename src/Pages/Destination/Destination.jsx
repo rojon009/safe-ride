@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router';
-import Map from '../../Components/Map/Map';
+import GoogleMapView from '../../Components/GoogleMapView/GoogleMapView';
 import RouteView from '../../Components/RouteView/RouteView';
 import SearchForm from '../../Components/SearchForm/SearchForm';
 import './Destination.css'
@@ -19,7 +19,7 @@ const Destination = () => {
                 }
             </div>
             <div className="map-area">
-                <Map />
+                <GoogleMapView />
             </div>
         </div>
     );
