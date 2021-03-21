@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import { useHistory, useLocation } from 'react-router';
+import { Redirect, useHistory, useLocation } from 'react-router';
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import './Login.css';
 import { UserContext } from "../../App";
-import firebase, { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithGoogle } from "../../firebase/firebase";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithGoogle } from "../../firebase/firebase";
 
 
 const Login = () => {
@@ -34,6 +34,7 @@ const Login = () => {
                 console.log(newUser);
                 setLoggedInUser({displayName: name})
             })
+            .catch(err => setErrMsg(err.message))
         } else {
             signInWithEmailAndPassword(email,password)
             .then(user => {
@@ -51,11 +52,14 @@ const Login = () => {
             setLoggedInUser(user);
             history.replace(from);
         })
+        .catch(err => setErrMsg(err.message))
     }
 
 
     const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return (
+
+
+    return loggedInUser ? <Redirect to={from}/> : (
         <div className="login-page">
             <div className="form-area">
                 <h1>{signUp ? 'Create an Account' : 'Log In'}</h1>
@@ -63,8 +67,9 @@ const Login = () => {
                     {
                         signUp && (
                             <>
-                                <input id="name" name="name" type="text" placeholder="Name" ref={register({ required: true })} />
-                                {errors.name && <span className="error">This field is required</span>}
+                                <input id="name" name="name" type="text" placeholder="Name" ref={register({ required: true, minLength: 3 })} />
+                                {errors.name && errors.name.type === 'required' && <span className="error">This field is required</span>}
+                                {errors.name && errors.name.type === 'minLength' && <span className="error">User name require at least 3 character.</span>}
                             </>
                         )
                     }

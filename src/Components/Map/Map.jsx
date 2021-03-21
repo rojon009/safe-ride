@@ -6,9 +6,9 @@ const Map = () => {
     const token = 'pk.eyJ1Ijoicm9qb24iLCJhIjoiY2ttaHBsdm9oMDloZDJ3bXRmNndsZWJlOCJ9.rTMjPPJh669gs8Ld6XxFLg';
 
     const [viewport, setViewport] = useState({
-        latitude: 23.810651,
-        longitude: 90.4126466,
-        zoom: 10,
+        latitude: 23.81635,
+        longitude: 90.40485,
+        zoom: 14,
         width: 600,
         height: 400,
     })
