@@ -6,12 +6,12 @@
 }
 
 .destination .sidebar {
-    flex: 1 1 400px;
+    flex: 1 1 200px;
     padding: 2rem 1rem;
 }
 
 .destination .map-area {
-    flex: 1 1 600px;
+    flex: 1 1 800px;
     padding: 2rem 1rem;
     display: flex;
     justify-content: center;
