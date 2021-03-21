@@ -7,4 +7,14 @@ const firebaseConfig = {
     appId: "1:975090208209:web:b8e4216b93ea0391f564f0"
 };
 
+// const firebaseConfig = {
+//     apiKey: "AIzaSyCHxucOHlpqZ8ix3QSN0QCjz9BVIjR-wi4",
+//     authDomain: "ema-jhon-9c2ac.firebaseapp.com",
+//     projectId: "ema-jhon-9c2ac",
+//     storageBucket: "ema-jhon-9c2ac.appspot.com",
+//     messagingSenderId: "721043852820",
+//     appId: "1:721043852820:web:5d9ddd4369bbb761b3e101"
+//   };
+
+
 export default firebaseConfig;

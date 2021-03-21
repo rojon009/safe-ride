@@ -6,7 +6,7 @@ import logo from '../../Images/logo.png';
 import './Header.css'
 const Header = () => {
 
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [loggedInUser] = useContext(UserContext);
 
     const [open, setOpen] = useState(false);
     
@@ -27,19 +27,19 @@ const Header = () => {
                 <Link to="/blog">Blog</Link>
                 {
                     loggedInUser ?
+                    <span className="user">{loggedInUser?.displayName || loggedInUser?.email}</span>
+                    :
+                    <button className='highlight' onClick={handleClick}>Login</button>
+                }
+                {
+                    loggedInUser ?
                     <button className="sign-out" onClick={() => auth.signOut()}>LogOut</button>
                     :
                     ''
                 }
-                {
-                    loggedInUser ?
-                    <button className="user">{loggedInUser?.displayName}</button>
-                    :
-                    <button className='highlight' onClick={handleClick}>Login</button>
-                }
             </nav>
             <button onClick={()=> setOpen(!open)} className="menu">
-                <span className="user">{loggedInUser?.displayName}</span>
+                <span className="user">{loggedInUser?.displayName || loggedInUser?.email}</span>
                 {
                     !open ?
                     <svg width='40px' height="40px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">

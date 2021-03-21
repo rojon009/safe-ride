@@ -21,6 +21,8 @@ export const UserContext = createContext();
 function App() {
 
   const [loggedInUser, setLoggedInUser] = useState(null);
+  
+  
 
   useEffect(() => {
     auth.onAuthStateChanged(user=> {
@@ -37,7 +39,9 @@ function App() {
             <Home />
           </Route>
           <Route path="/login">
-            <Login  />
+            {
+              loggedInUser ? <Redirect to="/"/> : <Login  />
+            }
           </Route>
           <Route exact path="/destination">
             <Redirect to='/destination/bike'/>

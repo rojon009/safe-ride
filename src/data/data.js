@@ -2,6 +2,35 @@
 const vehicles =  [
     {
         id: 1,
+        transportType: 'rickshaw',
+        imgUrl: 'https://www.lightcastlebd.com/wp-content/uploads/2015/01/Rickshaw.jpg',
+        information: [{
+            id: 13,
+            name: 'train_1',
+            fare: 25,
+            capacity: 106,
+        },
+        {
+            id: 14,
+            name: 'train_2',
+            fare: 29,
+            capacity: 65,
+        },
+        {
+            id: 15,
+            name: 'train_3',
+            fare: 28,
+            capacity: 69,
+        },
+        {
+            id: 16,
+            name: 'train_4',
+            fare: 26,
+            capacity: 102,
+        }],
+    },
+    {
+        id: 2,
         transportType: 'bike',
         imgUrl: 'https://i.imgur.com/Deb2jAV.png',
         information: [{
@@ -30,7 +59,36 @@ const vehicles =  [
         }],
     },
     {
-        id: 2,
+        id: 3,
+        transportType: 'cng',
+        imgUrl: 'https://static.vecteezy.com/system/resources/previews/000/633/857/original/rickshaw-vector-illustration.jpg',
+        information: [{
+            id: 13,
+            name: 'train_1',
+            fare: 25,
+            capacity: 106,
+        },
+        {
+            id: 14,
+            name: 'train_2',
+            fare: 29,
+            capacity: 65,
+        },
+        {
+            id: 15,
+            name: 'train_3',
+            fare: 28,
+            capacity: 69,
+        },
+        {
+            id: 16,
+            name: 'train_4',
+            fare: 26,
+            capacity: 102,
+        }],
+    },
+    {
+        id: 4,
         transportType: 'car',
         imgUrl: 'https://i.imgur.com/eyEHFNS.png',
         information: [{
@@ -59,7 +117,7 @@ const vehicles =  [
         }],
     },
     {
-        id: 3,
+        id: 5,
         transportType: 'bus',
         imgUrl: 'https://i.imgur.com/0eZ5oDZ.png',
         information: [{
@@ -88,7 +146,7 @@ const vehicles =  [
         }],
     },
     {
-        id: 4,
+        id: 6,
         transportType: 'train',
         imgUrl: 'https://i.imgur.com/lHgyhFc.png',
         information: [{
@@ -116,35 +174,8 @@ const vehicles =  [
             capacity: 102,
         }],
     },
-    {
-        id: 5,
-        transportType: 'metro',
-        imgUrl: 'https://i.imgur.com/lHgyhFc.png',
-        information: [{
-            id: 13,
-            name: 'train_1',
-            fare: 25,
-            capacity: 106,
-        },
-        {
-            id: 14,
-            name: 'train_2',
-            fare: 29,
-            capacity: 65,
-        },
-        {
-            id: 15,
-            name: 'train_3',
-            fare: 28,
-            capacity: 69,
-        },
-        {
-            id: 16,
-            name: 'train_4',
-            fare: 26,
-            capacity: 102,
-        }],
-    }
+    
+    
 ]
 
 export default vehicles;

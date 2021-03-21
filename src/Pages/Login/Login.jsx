@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import './Login.css';
 import { UserContext } from "../../App";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithGoogle } from "../../firebase/firebase";
+import firebase, { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithGoogle } from "../../firebase/firebase";
 
 
 const Login = () => {
@@ -23,16 +23,16 @@ const Login = () => {
     const onSubmit = ({name, email, password}) => {
         if(signUp) {
             createUserWithEmailAndPassword(email, password)
-            .then(res => res.user)
-            .then(user => {
-                user.updateProfile({
+            .then((res) =>  {
+                res.user.updateProfile({
                     displayName: name
-                }).then(user => console.log(user))
-                return user;
+                })
+                return res.user;
             })
-            .then(user => {
-                setLoggedInUser(user);
-                history.replace(from);
+            .then( (user) => {
+                const newUser = {...user, newName: name};
+                console.log(newUser);
+                setLoggedInUser({displayName: name})
             })
         } else {
             signInWithEmailAndPassword(email,password)
