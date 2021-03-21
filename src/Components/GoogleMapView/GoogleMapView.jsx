@@ -10,7 +10,7 @@ const containerStyle = {
 
 const center = {
   lat: 23.814198,
-  lng: 90.421038
+  lng: 90.421038,
 };
 
 const GoogleMapView = () => {
