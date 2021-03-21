@@ -47,6 +47,7 @@ img {
 
 @media screen and (max-width: 760px) {
   html {
+    background: rgb(122, 122, 238);
     background: linear-gradient(
         0deg,
         rgba(255, 255, 255, 0.514),
