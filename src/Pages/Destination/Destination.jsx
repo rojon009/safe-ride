@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router';
+import GoogleMapView from '../../Components/GoogleMapView/GoogleMapView';
 import Map from '../../Components/Map/Map';
 import RouteView from '../../Components/RouteView/RouteView';
 import SearchForm from '../../Components/SearchForm/SearchForm';
@@ -18,8 +19,8 @@ const Destination = () => {
                 }
             </div>
             <div className="map-area">
-                <Map />
-                {/* <GoogleMapView /> */}
+                {/* <Map /> */}
+                <GoogleMapView />
             </div>
         </div>
     );
