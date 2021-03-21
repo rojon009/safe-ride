@@ -19,8 +19,8 @@ const Destination = () => {
                 }
             </div>
             <div className="map-area">
-                {/* <Map /> */}
-                <GoogleMapView />
+                <Map />
+                {/* <GoogleMapView /> */}
             </div>
         </div>
     );
