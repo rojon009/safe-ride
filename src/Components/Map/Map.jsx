@@ -9,13 +9,12 @@ const Map = () => {
         latitude: 23.81635,
         longitude: 90.40485,
         zoom: 14,
-        width: 700,
+        width: 800,
         height: 400,
     })
 
-    
     return (
-        <ReactMapGl  mapboxApiAccessToken={token} {...viewport} onViewportChange={(nextViewport => setViewport(nextViewport))}></ReactMapGl>    
+        <ReactMapGl mapboxApiAccessToken={token} {...viewport} onViewportChange={(nextViewport => setViewport(nextViewport))}></ReactMapGl>
     );
 };
 

@@ -1,11 +1,11 @@
 import React from 'react';
 import './ResultCard.css'
 
-const ResultCard = ({name,imgUrl,vehicle}) => {
+const ResultCard = ({ name, imgUrl, vehicle }) => {
     console.log(vehicle);
     return (
         <div className="result-card">
-            <img src={imgUrl} alt="metro"/>
+            <img src={imgUrl} alt="metro" />
             <h4>{name}</h4>
             <div className="available">
                 <svg width='20px' height='20px' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">

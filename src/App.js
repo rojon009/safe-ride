@@ -1,33 +1,28 @@
-import './App.css';
-import Header from './Components/Header/Header';
+import Header from "./Components/Header/Header";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Redirect,
 } from "react-router-dom";
-import Home from './Pages/Home/Home';
-import Login from './Pages/Login/Login';
-import { createContext, useEffect, useState } from 'react';
-import Destination from './Pages/Destination/Destination';
-import { auth } from './firebase/firebase';
-import PrivetRoute from './Components/PrivetRoute/PrivetRoute';
-import Page404 from './Components/Page404/Page404';
-
+import Home from "./Pages/Home/Home";
+import Login from "./Pages/Login/Login";
+import { createContext, useEffect, useState } from "react";
+import Destination from "./Pages/Destination/Destination";
+import { auth } from "./firebase/firebase";
+import PrivetRoute from "./Components/PrivetRoute/PrivetRoute";
+import Page404 from "./Components/Page404/Page404";
 
 export const UserContext = createContext();
 
-
 function App() {
-
   const [loggedInUser, setLoggedInUser] = useState(null);
 
-
   useEffect(() => {
-    auth.onAuthStateChanged(user=> {
+    auth.onAuthStateChanged((user) => {
       setLoggedInUser(user);
-    })
-  }, [])
+    });
+  }, []);
 
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
@@ -38,10 +33,10 @@ function App() {
             <Home />
           </Route>
           <Route path="/login">
-            <Login  />
+            <Login />
           </Route>
           <Route exact path="/destination">
-            <Redirect to='/destination/bike'/>
+            <Redirect to="/destination/bike" />
           </Route>
           <PrivetRoute path="/destination/:id">
             <Destination />
