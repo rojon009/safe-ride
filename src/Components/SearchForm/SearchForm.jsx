@@ -33,7 +33,7 @@ const SearchForm = ({ setDirection }) => {
                 <input id="to" name="to" type="text" placeholder="Pick To" ref={register({ required: true })} />
                 {errors.to && <span className="error">This field is required</span>}
                 <label htmlFor="Date">Date of Journey</label>
-                <input name="date" id="date" type="date" defaultValue={formatDate()} />
+                <input name="date" id="date" type="date" defaultValue={formatDate()} ref={register({required: true})} />
                 <input type="submit" value="Search" />
             </form>
         </div>

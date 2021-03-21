@@ -15,6 +15,9 @@
   padding: 1rem 2rem;
   position: relative;
 }
+.direction h2 {
+  color: #e2e2e2;
+}
 
 .direction::before {
   content: "";

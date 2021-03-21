@@ -11,6 +11,7 @@ const RouteView = ({ id, direction, setDirection }) => {
             <ul className="direction">
                 <li>{direction?.from}</li>
                 <li>{direction?.to}</li>
+                <h2>On: {direction?.date}</h2>
             </ul>
             <div className="results">
                 {
